@@ -17,20 +17,9 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function ContactHero() {
   return (
-    <section className="bg-[#F5F2EB] w-full lg:min-h-[600px] flex flex-col lg:flex-row">
+    <section className="bg-[#ffffff] w-full lg:min-h-[600px] flex flex-col lg:flex-row">
       {/* Left Side: Textured Background & Text */}
       <div className="relative w-full lg:w-[60%] min-h-[250px] lg:h-auto">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/contact/back.jpg"
-            alt="Texture Background"
-            fill
-            className=""
-            priority
-          />
-        </div>
-
         {/* Overlay Content */}
         <div className="relative z-10 w-full h-full flex flex-col justify-center px-8 lg:px-20 py-16">
           <h1

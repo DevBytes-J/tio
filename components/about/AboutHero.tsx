@@ -11,7 +11,7 @@ const playfairDisplay = Playfair_Display({
 
 export default function AboutHero() {
   return (
-    <section className="relative w-full h-[85vh] min-h-[500px]">
+    <section className="relative w-full h-[70vh] lg:h-[85vh] min-h-[500px]">
       <div className="absolute inset-0 z-0">
         <Image
           src="/about/hero.png"
@@ -24,7 +24,7 @@ export default function AboutHero() {
       </div>
       <div className="relative z-10 container p-6 h-full flex items-end">
         <h1
-          className={`${playfairDisplay.className} text-white text-4xl lg:text-[64px] italic max-w-4xl leading-tight w-full lg:w-[40%]`}
+          className={`${playfairDisplay.className} text-white text-4xl md:text-5xl lg:text-[64px] italic max-w-4xl leading-tight w-full lg:w-[40%]`}
         >
           We Create Spaces that Feel Like Home{" "}
           <span className="text-[#C47A5D]">.</span>

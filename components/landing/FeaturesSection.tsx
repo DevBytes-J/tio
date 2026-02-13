@@ -43,23 +43,14 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="bg-[#F5F2EB] py-[112px] relative">
+    <section className="bg-[#F5F2EB] my-[112px] relative">
       <div className="w-full relative">
-        <div className="absolute inset-0 z-0 opacity-50">
-          <Image
-            src="/landing/gray1.jpg"
-            alt=""
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="container px-6 pt-[112px] pb-[72px] relative z-10">
+        <div className="absolute inset-0 z-0 bg-[#F5F2EB]"></div>
+        <div className="container px-6 pt-[112px] pb-[72px] relative z-10 flex justify-center items-center">
           <h2
-            className={`${playfairDisplay.className} text-4xl md:text-[40px] text-[#2F2F2F] leading-tight`}
+            className={`${playfairDisplay.className} italic text-4xl md:text-[40px] text-[#2F2F2F] leading-tight`}
           >
-            More Than A Place,
-            <br />
-            <span className="italic text-[#2F2F2F]">A Feeling</span>
+            More Than A Place, A Feeling
             <span className="italic text-[#C47A5D]">.</span>
           </h2>
         </div>
@@ -77,19 +68,15 @@ export default function FeaturesSection() {
       </div>
 
       <div className="w-full relative pb-40">
-        <div className="absolute inset-0 z-0 opacity-50">
-          <Image
-            src="/landing/gray2.jpg"
-            alt=""
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="container p-6 relative z-10">
+        <div className="absolute inset-0 z-0 bg-[#F5F2EB]"></div>
+        <div className="container p-6 relative z-10 mx-auto">
           {/* Features Grid */}
-          <div className="grid grid-cols-1 min-[1110px]:grid-cols-3 w-full gap-6">
+          <div className="grid grid-cols-1 min-[1110px]:grid-cols-3 w-full gap-6 text-center">
             {features.map((feature, index) => (
-              <div key={index} className="flex flex-col gap-4">
+              <div
+                key={index}
+                className="flex flex-col gap-4 items-center justify-center"
+              >
                 <div className="text-3xl text-[#2F2F2F]">
                   <feature.icon />
                 </div>

@@ -16,19 +16,19 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function AboutStats() {
   return (
-    <section className="py-20 lg:py-[224px] px-6 container mx-auto">
+    <section className="py-20 lg:py-[224px] px-6">
       <div className="flex flex-col lg:flex-row gap-20 lg:gap-[148px]">
         <div className="flex-1">
           <h2
-            className={`${playfairDisplay.className} italic text-[40px] text-[#2F2F2F] leading-tight mb-8`}
+            className={`${playfairDisplay.className} italic text-[30px]  md:text-[40px] text-[#2F2F2F] leading-tight mb-8`}
           >
-            Numbers don't just <br /> measure success—they tell <br /> a story
+            Numbers don't just measure success—they tell a story
             <span className="text-[#C47A5D]">.</span>
           </h2>
         </div>
         <div className="flex-1 flex flex-col gap-12">
           <p
-            className={`${spaceGrotesk.className} text-[#2F2F2F]/60 text-sm leading-relaxed`}
+            className={`${spaceGrotesk.className} text-[#2F2F2F]/60 leading-relaxed`}
           >
             Our experience in real estate is built on helping you find places
             that reflect your lifestyle, personality, aspirations and who you

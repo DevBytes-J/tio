@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import Image from "next/image";
 import { GoChevronRight } from "react-icons/go";
@@ -16,12 +17,22 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
-      <div className="bg-[#F5F2EB] flex flex-col min-[1110px]:flex-row h-auto min-h-[600px] min-[1110px]:h-[75vh] w-full">
-        <div className="w-full min-[1110px]:w-1/2 flex flex-col justify-center px-6 py-10 min-[1110px]:py-0">
+      <div className="bg-[#F5F2EB] flex flex-col min-[1110px]:flex-row min-h-[550px] min-[1110px]:h-[75vh] w-full">
+        <div className="w-full min-[1110px]:w-1/2 flex flex-col justify-end m-6 min-[1110px]:py-0">
           <h1
-            className={`${playfairDisplay.className} text-4xl min-[1110px]:text-[64px] italic leading-tight`}
+            className={`${playfairDisplay.className} text-4xl  min-[1110px]:text-[64px] italic leading-tight`}
           >
             Feel the home<span className="text-[#C47A5D]">.</span>
           </h1>
@@ -37,12 +48,22 @@ export default function Hero() {
         </div>
         <div className="w-full min-[1110px]:w-1/2 relative h-[300px] min-[1110px]:h-full">
           <Image
-            src="/landing/hero.jpg"
-            // ... rest of image props
+            src="/landing/hero.png"
             alt="Hero"
             fill
-            className="object-contain object-top"
+            className={`object-bottom transition-opacity duration-1000 ${
+              currentImageIndex === 0 ? "opacity-100" : "opacity-0"
+            }`}
             priority
+          />
+          <Image
+            src="/landing/hero2.png"
+            alt="Hero"
+            fill
+            className={`object-bottom transition-opacity duration-1000 ${
+              currentImageIndex === 1 ? "opacity-100" : "opacity-0"
+            }`}
+            priority={false}
           />
         </div>
       </div>
