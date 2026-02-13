@@ -27,7 +27,7 @@ export default function ListingsSection({
   showButton = true,
 }: ListingsSectionProps) {
   return (
-    <section className="bg-[#F5F2EB] pt-10 min-[1110px]:pt-[224px] px-6">
+    <section className="bg-[#ffffff] pt-10 min-[1110px]:pt-[224px] px-6 ">
       <div className="container mx-auto">
         <div className="flex flex-col min-[1110px]:flex-row items-baseline mb-8 min-[1110px]:mb-[64px]">
           <div>
@@ -75,7 +75,7 @@ export default function ListingsSection({
               <div className="relative aspect-3/4 overflow-hidden">
                 <div
                   className={`${spaceGrotesk.className} 
-absolute top-2 left-2 right-2 z-10 flex justify-between text-[14px] font-medium text-[#2F2F2F]/60 bg-[#F5F2EB] p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+absolute top-2 left-2 right-2 z-10 flex justify-between text-[14px] font-medium text-[#2F2F2F]/60 bg-[#F5F2EB] p-4 opacity-100 min-[1110px]:opacity-0 min-[1110px]:group-hover:opacity-100 transition-opacity duration-300`}
                 >
                   <span>{listing.specs.beds} Beds</span>
                   <span>{listing.specs.baths} Baths</span>
@@ -88,7 +88,7 @@ absolute top-2 left-2 right-2 z-10 flex justify-between text-[14px] font-medium 
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[rgba(0,0,0,0.47)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center items-center">
+                <div className="absolute inset-0 bg-[rgba(0,0,0,0.47)] opacity-100 min-[1110px]:opacity-0 min-[1110px]:group-hover:opacity-100 transition-opacity duration-300 flex justify-center items-center">
                   <div className="text-white flex items-center gap-2">
                     <span
                       className={`${playfairDisplay.className} italic text-lg`}

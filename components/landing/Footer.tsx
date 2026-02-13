@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="pt-[33px] pb-[64px] border-t border-[#E8E4D9]/10 flex flex-col min-[1110px]:flex-row justify-between items-center gap-4">
+        <div className="pt-[33px] pb-[40px] border-t border-[#E8E4D9]/10 flex flex-col min-[1110px]:flex-row justify-between items-center gap-4">
           <p className={`${spaceGrotesk.className} text-xs text-[#E8E4D9]/40`}>
             © {currentYear} Relume. All rights reserved.
           </p>

@@ -84,7 +84,9 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-t border-b border-[#E8E4D9]/20 py-[26px] cursor-pointer h-fit"
+              className={`border-b border-[#E8E4D9]/20 py-[26px] cursor-pointer h-fit ${
+                index === 0 ? "border-t" : ""
+              } ${index === 1 ? "min-[1110px]:border-t" : ""}`}
               onClick={() => toggleFAQ(index)}
             >
               <div className="flex justify-between items-start py-2">

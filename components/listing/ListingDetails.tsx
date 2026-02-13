@@ -73,9 +73,9 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
   return (
     <section className="bg-[#F5F2EB] py-[112px]">
       <div className="px-6">
-        <div className="flex flex-col min-[1110px]:flex-row gap-20 min-[1110px]:gap-[100px] items-stretch">
-          {/* Left Column - Images Stack */}
-          <div className="w-full min-[1110px]:w-[348px] shrink-0 flex flex-col justify-between min-[1110px]:flex">
+        <div className="flex flex-col min-[1300px]:flex-row gap-12 min-[1300px]:gap-[100px] items-stretch">
+          {/* Left Column - Images Stack (Desktop Only) */}
+          <div className="hidden min-[1300px]:flex w-[348px] shrink-0 flex-col justify-between">
             <div className="relative w-[348px] h-[351px]">
               <Image
                 src="/listing/middle1.png"
@@ -86,7 +86,7 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
             </div>
             <div className="relative w-[348px] h-[351px]">
               <Image
-                src="/listing/middle1.png"
+                src="/listing/middle3.png"
                 alt="Exterior details"
                 fill
                 className="object-cover"
@@ -95,10 +95,20 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
           </div>
 
           {/* Right Column - Content */}
-          <div className="w-full min-[1110px]:flex-1 pt-2">
+          <div className="w-full min-[1300px]:flex-1 pt-2">
             {/* Description */}
             <div className="mb-16 flex flex-col xl:flex-row gap-12 xl:gap-[148px]">
               <div className="flex-1">
+                {/* Mobile Image 1 */}
+                <div className="block min-[1300px]:hidden w-full md:w-[80%] mx-auto aspect-4/3 relative mb-8">
+                  <Image
+                    src="/listing/middle1.png"
+                    alt="Aerial view"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
                 <h2
                   className={`${playfairDisplay.className} text-[40px] italic leading-tight text-[#2F2F2F] mb-6`}
                 >
@@ -118,21 +128,21 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
                 <div className="flex gap-16 border-t border-b border-[#2F2F2F]/10 py-6">
                   <div className="flex flex-col gap-2">
                     <span
-                      className={`${spaceGrotesk.className} text-[#2F2F2F] font-medium`}
+                      className={`${spaceGrotesk.className} text-[#2F2F2F] text-[14px]`}
                     >
                       {listing.specs.beds} Beds
                     </span>
                   </div>
                   <div className="flex flex-col gap-2">
                     <span
-                      className={`${spaceGrotesk.className} text-[#2F2F2F] font-medium`}
+                      className={`${spaceGrotesk.className} text-[#2F2F2F] text-[14px]`}
                     >
                       {listing.specs.baths} Baths
                     </span>
                   </div>
                   <div className="flex flex-col gap-2">
                     <span
-                      className={`${spaceGrotesk.className} text-[#2F2F2F] font-medium`}
+                      className={`${spaceGrotesk.className} text-[#2F2F2F] text-[14px]`}
                     >
                       {listing.specs.sqft}
                     </span>
@@ -145,6 +155,16 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
 
             {/* Features List */}
             <div className="mb-20">
+              {/* Mobile Image 2 */}
+              <div className="block min-[1300px]:hidden w-full md:w-[80%] mx-auto aspect-4/3 relative mb-8">
+                <Image
+                  src="/listing/middle2.png"
+                  alt="Interior details"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
               <h3
                 className={`${playfairDisplay.className} text-[32px] italic text-[#2F2F2F] mb-12`}
               >
@@ -174,8 +194,8 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
                   ))}
                 </div>
 
-                {/* Feature Image */}
-                <div className="w-full xl:w-auto shrink-0">
+                {/* Feature Image (Desktop Only) */}
+                <div className="hidden min-[1300px]:block w-full xl:w-auto shrink-0">
                   <div className="sticky top-24">
                     <div className="relative w-[348px] h-[351px]">
                       <Image
@@ -192,6 +212,16 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
 
             {/* Location Section */}
             <div>
+              {/* Mobile Image 3 */}
+              <div className="block min-[1300px]:hidden w-full md:w-[80%] mx-auto aspect-4/3 relative mb-8">
+                <Image
+                  src="/listing/middle3.png"
+                  alt="Exterior details"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
               <h3
                 className={`${playfairDisplay.className} text-[32px] italic text-[#2F2F2F] mb-6`}
               >

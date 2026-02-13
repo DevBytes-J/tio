@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function ListingHero() {
   return (
-    <section className="relative w-full h-[85vh] min-h-[500px]">
+    <section className="relative w-full h-[70vh] lg:h-[85vh] min-h-[500px]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -52,7 +52,7 @@ export default function ListingHero() {
             The Horizon Loft
           </p>
           <h1
-            className={`${playfairDisplay.className} text-[#F5F2EB] text-5xl md:text-[64px] italic leading-tight max-w-4xl`}
+            className={`${playfairDisplay.className} text-[#F5F2EB] text-4xl md:text-[64px] italic leading-tight max-w-4xl`}
           >
             Where Modern <br />
             Elegance Meets <br />

@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function AboutGallery() {
   return (
     <section className="pb-[112px]">
-      <div className="flex flex-col min-[1110px]:flex-row h-auto min-[1110px]:h-[600px] w-full mb-10 min-[1110px]:mb-0 gap-6">
-        <div className="w-full min-[1110px]:w-auto min-[1110px]:flex-3 h-[300px] min-[1110px]:h-auto relative border-r-0 min-[1110px]:border-r-4 border-[#F5F2EB]">
+      <div className="flex h-[600px] w-full gap-1 lg:gap-6">
+        <div className="flex-3 relative border-r-4 border-[#F5F2EB]">
           <Image
             src="/about/middle1.jpg"
             alt="Gallery 1"
@@ -14,7 +14,7 @@ export default function AboutGallery() {
             className="object-cover"
           />
         </div>
-        <div className="w-full min-[1110px]:w-auto min-[1110px]:flex-2 h-[300px] min-[1110px]:h-auto relative border-r-0 min-[1110px]:border-r-4 border-[#F5F2EB]">
+        <div className="flex-2 relative border-r-4 border-[#F5F2EB]">
           <Image
             src="/about/middle2.jpg"
             alt="Gallery 2"
@@ -22,7 +22,7 @@ export default function AboutGallery() {
             className="object-cover"
           />
         </div>
-        <div className="w-full min-[1110px]:w-auto min-[1110px]:flex-1 h-[300px] min-[1110px]:h-auto relative">
+        <div className="flex-1 relative">
           <Image
             src="/about/middle3.jpg"
             alt="Gallery 3"
@@ -32,14 +32,7 @@ export default function AboutGallery() {
         </div>
       </div>
       {/* Gray Picture Section */}
-      <div className="relative w-full h-[224px]">
-        <Image
-          src="/about/gray.png"
-          alt="Featured Space"
-          fill
-          className="object-cover"
-        />
-      </div>
+      <div className="relative w-full h-[224px] bg-[#F5F2EB]"></div>
     </section>
   );
 }

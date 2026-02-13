@@ -35,7 +35,7 @@ const steps = [
 
 export default function FindHomeSection() {
   return (
-    <section className="bg-[#F5F2EB] w-full min-h-screen flex flex-col min-[1110px]:flex-row pb-[112px]">
+    <section className="bg-[#ffffff] w-full min-h-screen flex flex-col min-[1110px]:flex-row pb-[112px]">
       {/* Left Content */}
       <div className="w-full min-[1110px]:w-1/2 pl-6 pr-6 min-[1110px]:pr-0 pb-6 flex flex-col justify-between">
         <div>

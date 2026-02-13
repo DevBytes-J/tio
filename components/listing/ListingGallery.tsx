@@ -19,7 +19,7 @@ export default function ListingGallery() {
   return (
     <section className="bg-[#F5F2EB] pt-[112px] pb-[224px]">
       {/* Gallery Row */}
-      <div className="flex h-[600px] w-full mb-20 gap-6">
+      <div className="flex h-[600px] w-full mb-20 gap-1 lg:gap-6 ">
         <div className="flex-3 relative border-r-4 border-[#F5F2EB]">
           <Image
             src="/listing/last1.png"
