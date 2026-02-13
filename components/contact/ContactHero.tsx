@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function ContactHero() {
   return (
-    <section className="bg-[#ffffff] w-full lg:min-h-[600px] flex flex-col lg:flex-row">
+    <section className="bg-[#F9F8F6] w-full lg:min-h-[600px] flex flex-col lg:flex-row">
       {/* Left Side: Textured Background & Text */}
       <div className="relative w-full lg:w-[60%] min-h-[250px] lg:h-auto">
         {/* Overlay Content */}

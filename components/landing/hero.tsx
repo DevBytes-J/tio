@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <>
       <div className="bg-[#F5F2EB] flex flex-col min-[1110px]:flex-row min-h-[550px] min-[1110px]:h-[75vh] w-full">
-        <div className="w-full min-[1110px]:w-1/2 flex flex-col justify-end m-6 min-[1110px]:py-0">
+        <div className="w-full min-[1110px]:w-[40%] flex flex-col justify-end m-6 min-[1110px]:py-0">
           <h1
             className={`${playfairDisplay.className} text-4xl  min-[1110px]:text-[64px] italic leading-tight`}
           >
@@ -46,12 +46,12 @@ export default function Hero() {
             Get in Touch <GoChevronRight />
           </button>
         </div>
-        <div className="w-full min-[1110px]:w-1/2 relative h-[300px] min-[1110px]:h-full">
+        <div className="w-full min-[1110px]:w-[60%] relative h-[300px] min-[1110px]:h-full">
           <Image
             src="/landing/hero.png"
             alt="Hero"
             fill
-            className={`object-bottom transition-opacity duration-1000 ${
+            className={`object-cover object-bottom transition-opacity duration-1000 ${
               currentImageIndex === 0 ? "opacity-100" : "opacity-0"
             }`}
             priority
@@ -60,7 +60,7 @@ export default function Hero() {
             src="/landing/hero2.png"
             alt="Hero"
             fill
-            className={`object-bottom transition-opacity duration-1000 ${
+            className={`object-cover object-bottom transition-opacity duration-1000 ${
               currentImageIndex === 1 ? "opacity-100" : "opacity-0"
             }`}
             priority={false}
