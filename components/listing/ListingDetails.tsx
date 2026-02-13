@@ -55,7 +55,21 @@ const features = [
   },
 ];
 
-export default function ListingDetails() {
+export interface ListingDetailsProps {
+  listing: {
+    id: number;
+    title: string;
+    location: string;
+    image: string;
+    specs: {
+      beds: number;
+      baths: number;
+      sqft: string;
+    };
+  };
+}
+
+export default function ListingDetails({ listing }: ListingDetailsProps) {
   return (
     <section className="bg-[#F5F2EB] py-[112px]">
       <div className="px-6">
@@ -93,10 +107,10 @@ export default function ListingDetails() {
                 <p
                   className={`${spaceGrotesk.className} text-[#2F2F2F]/70 text-base leading-relaxed mb-10`}
                 >
-                  Step into The Horizon Loft, where sleek modern aesthetics
-                  blend effortlessly with warm, inviting comfort. This residence
-                  is more than just a home—it's an experience crafted for those
-                  who appreciate thoughtful design, natural light, and seamless
+                  Step into {listing.title}, where sleek modern aesthetics blend
+                  effortlessly with warm, inviting comfort. This residence is
+                  more than just a home—it's an experience crafted for those who
+                  appreciate thoughtful design, natural light, and seamless
                   functionality.
                 </p>
 
@@ -106,21 +120,21 @@ export default function ListingDetails() {
                     <span
                       className={`${spaceGrotesk.className} text-[#2F2F2F] font-medium`}
                     >
-                      3 Beds
+                      {listing.specs.beds} Beds
                     </span>
                   </div>
                   <div className="flex flex-col gap-2">
                     <span
                       className={`${spaceGrotesk.className} text-[#2F2F2F] font-medium`}
                     >
-                      2.5 Baths
+                      {listing.specs.baths} Baths
                     </span>
                   </div>
                   <div className="flex flex-col gap-2">
                     <span
                       className={`${spaceGrotesk.className} text-[#2F2F2F] font-medium`}
                     >
-                      2,300 sq. ft.
+                      {listing.specs.sqft}
                     </span>
                   </div>
                 </div>
@@ -186,8 +200,8 @@ export default function ListingDetails() {
               <p
                 className={`${spaceGrotesk.className} text-[#2F2F2F]/70 text-sm leading-relaxed max-w-xl`}
               >
-                Nestled in a prime district, The Horizon Loft offers a balance
-                of urban energy and personal retreat. Enjoy the convenience of
+                Nestled in {listing.location}, this home offers a balance of
+                urban energy and personal retreat. Enjoy the convenience of
                 being near vibrant cafes, cultural hubs, and serene parks—all
                 while having your own peaceful sanctuary above the city.
               </p>
