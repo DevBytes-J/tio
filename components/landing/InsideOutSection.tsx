@@ -2,6 +2,7 @@
 
 import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -14,7 +15,13 @@ export default function InsideOutSection() {
     <section className="bg-[#ffffff] w-full pt-10 md:pt-10 pb-0 relative overflow-hidden flex flex-col items-center">
       <div className="container relative z-10 mb-[-2%] min-[1110px]:mb-[-5%] text-center">
         {/* Typography Layer */}
-        <div className="text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center"
+        >
           <h2
             className={`${playfairDisplay.className} text-[40px] min-[1300px]:text-[160px] text-[#2F2F2F1F] italic `}
           >
@@ -24,11 +31,17 @@ export default function InsideOutSection() {
               ™
             </span>
           </h2>
-        </div>
+        </motion.div>
       </div>
 
       {/* Image Layer */}
-      <div className="relative w-full aspect-video max-h-[80vh] z-10 mt-15">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="relative w-full aspect-video max-h-[80vh] z-10 mt-15"
+      >
         <Image
           src="/landing/middle-sec1.jpg"
           alt="Modern white luxury house exterior"
@@ -36,7 +49,7 @@ export default function InsideOutSection() {
           className="object-cover"
           priority
         />
-      </div>
+      </motion.div>
     </section>
   );
 }

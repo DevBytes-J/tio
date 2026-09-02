@@ -2,6 +2,7 @@
 
 import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { LuDoorOpen } from "react-icons/lu";
 
@@ -76,29 +77,47 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
         <div className="flex flex-col min-[1300px]:flex-row gap-12 min-[1300px]:gap-[100px] items-stretch">
           {/* Left Column - Images Stack (Desktop Only) */}
           <div className="hidden min-[1300px]:flex w-[348px] shrink-0 flex-col justify-between">
-            <div className="relative w-[348px] h-[351px]">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="relative w-[348px] h-[351px]"
+            >
               <Image
                 src="/listing/middle1.png"
                 alt="Aerial view"
                 fill
                 className="object-cover"
               />
-            </div>
-            <div className="relative w-[348px] h-[351px]">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative w-[348px] h-[351px]"
+            >
               <Image
                 src="/listing/middle3.png"
                 alt="Exterior details"
                 fill
                 className="object-cover"
               />
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Column - Content */}
           <div className="w-full min-[1300px]:flex-1 pt-2">
             {/* Description */}
             <div className="mb-16 flex flex-col xl:flex-row gap-12 xl:gap-[148px]">
-              <div className="flex-1">
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8 }}
+                className="flex-1"
+              >
                 {/* Mobile Image 1 */}
                 <div className="block min-[1300px]:hidden w-full md:w-[80%] mx-auto aspect-4/3 relative mb-8">
                   <Image
@@ -119,7 +138,7 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
                 >
                   Step into {listing.title}, where sleek modern aesthetics blend
                   effortlessly with warm, inviting comfort. This residence is
-                  more than just a home—it's an experience crafted for those who
+                  more than just a home—it&apos;s an experience crafted for those who
                   appreciate thoughtful design, natural light, and seamless
                   functionality.
                 </p>
@@ -148,7 +167,7 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
               {/* Spacer to align width with features section */}
               <div className="hidden xl:block w-[348px] shrink-0" />
             </div>
@@ -165,16 +184,35 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
                 />
               </div>
 
-              <h3
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
                 className={`${playfairDisplay.className} text-[32px] italic text-[#2F2F2F] mb-12`}
               >
                 Features & Highlights
-              </h3>
+              </motion.h3>
               <div className="flex flex-col xl:flex-row gap-12 xl:gap-[148px]">
                 {/* Features Column */}
-                <div className="flex-1 flex flex-col gap-6">
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+                  }}
+                  className="flex-1 flex flex-col gap-6"
+                >
                   {features.map((feature, index) => (
-                    <div key={index} className="flex gap-5 items-start">
+                    <motion.div 
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                      }}
+                      key={index} className="flex gap-5 items-start"
+                    >
                       <div className="text-2xl text-[#2F2F2F] mt-1 shrink-0">
                         <feature.icon className="stroke-1" />
                       </div>
@@ -190,28 +228,39 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
                           {feature.description}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
 
                 {/* Feature Image (Desktop Only) */}
                 <div className="hidden min-[1300px]:block w-full xl:w-auto shrink-0">
                   <div className="sticky top-24">
-                    <div className="relative w-[348px] h-[351px]">
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.8 }}
+                      className="relative w-[348px] h-[351px]"
+                    >
                       <Image
                         src="/listing/middle2.png"
                         alt="Interior details"
                         fill
                         className="object-cover"
                       />
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Location Section */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
               {/* Mobile Image 3 */}
               <div className="block min-[1300px]:hidden w-full md:w-[80%] mx-auto aspect-4/3 relative mb-8">
                 <Image
@@ -235,7 +284,7 @@ export default function ListingDetails({ listing }: ListingDetailsProps) {
                 being near vibrant cafes, cultural hubs, and serene parks—all
                 while having your own peaceful sanctuary above the city.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

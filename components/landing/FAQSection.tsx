@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import { GoPlus, GoDash } from "react-icons/go";
+import { motion } from "framer-motion";
 
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
@@ -60,6 +61,23 @@ const faqs = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5 }
+  },
+};
+
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -71,18 +89,29 @@ export default function FAQSection() {
     <section className="bg-[#1A1A1A] w-full py-[112px] px-6 text-[#E8E4D9]">
       <div className="container mx-auto">
         <div className="mb-16">
-          <h2
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             className={`${playfairDisplay.className} text-[40px] italic leading-tight mb-8`}
           >
             Frequently
             <br />
             Asked Questions<span className="text-[#C47A5D]">.</span>
-          </h2>
+          </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 min-[1110px]:grid-cols-2 gap-x-12 ">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 min-[1110px]:grid-cols-2 gap-x-12 "
+        >
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
+              variants={itemVariants}
               key={index}
               className={`border-b border-[#E8E4D9]/20 py-[26px] cursor-pointer h-fit ${
                 index === 0 ? "border-t" : ""
@@ -113,11 +142,17 @@ export default function FAQSection() {
                   {faq.answer}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-20 flex flex-col items-end gap-6">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-20 flex flex-col items-end gap-6"
+        >
           <p
             className={`${spaceGrotesk.className} text-[#E8E4D9]/60 text-right`}
           >
@@ -126,7 +161,7 @@ export default function FAQSection() {
           <button className="bg-[#E8E4D9] text-[#1A1A1A] px-[18px] py-3 rounded-full text-[14px] hover:bg-white transition-colors flex items-center gap-2 cursor-pointer">
             Get in Touch <MdOutlineKeyboardArrowRight className="text-lg" />
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

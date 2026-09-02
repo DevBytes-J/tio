@@ -34,7 +34,7 @@ export default function ContactInfo() {
           <p
             className={`${spaceGrotesk.className} text-[#2F2F2F]/60 text-sm leading-relaxed max-w-xs mb-2`}
           >
-            Reach out for inquiries, support, or collaborations. We're here to
+            Reach out for inquiries, support, or collaborations. We&apos;re here to
             help, always.
           </p>
           <Link

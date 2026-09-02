@@ -2,6 +2,7 @@
 
 import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import CountUp from "../CountUp";
+import { motion } from "framer-motion";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -19,15 +20,23 @@ export default function AboutStats() {
     <section className="py-20 lg:py-[224px] px-6">
       <div className="flex flex-col lg:flex-row gap-20 lg:gap-[148px]">
         <div className="flex-1">
-          <h2
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
             className={`${playfairDisplay.className} italic text-[30px]  md:text-[40px] text-[#2F2F2F] leading-tight mb-8`}
           >
-            Numbers don't just measure success—they tell a story
+            Numbers don&apos;t just measure success—they tell a story
             <span className="text-[#C47A5D]">.</span>
-          </h2>
+          </motion.h2>
         </div>
         <div className="flex-1 flex flex-col gap-12">
-          <p
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className={`${spaceGrotesk.className} text-[#2F2F2F]/60 leading-relaxed`}
           >
             Our experience in real estate is built on helping you find places
@@ -35,7 +44,7 @@ export default function AboutStats() {
             are. From satisfied homeowners to stunning interiors that elevate
             everyday living, our numbers reflect the journey of turning houses
             into homes.
-          </p>
+          </motion.p>
           <div className="grid grid-cols-2 gap-y-12 gap-x-8 ">
             <div>
               <span

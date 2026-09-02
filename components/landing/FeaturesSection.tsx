@@ -2,12 +2,13 @@
 
 import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import Image from "next/image";
-import { GoPlay } from "react-icons/go";
+
 import {
   PiDoorOpenThin,
   PiLightbulbFilamentThin,
   PiHeartThin,
 } from "react-icons/pi"; // Using Pi icons for thin look
+import { motion, Variants } from "framer-motion";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -41,23 +42,50 @@ const features = [
   },
 ];
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  },
+};
+
 export default function FeaturesSection() {
   return (
     <section className="bg-[#F5F2EB] my-[112px] relative">
       <div className="w-full relative">
         <div className="absolute inset-0 z-0 bg-[#F5F2EB]"></div>
         <div className="container px-6 pt-[112px] pb-[72px] relative z-10 flex justify-center items-center">
-          <h2
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             className={`${playfairDisplay.className} italic text-4xl md:text-[40px] text-[#2F2F2F] leading-tight`}
           >
             More Than A Place, A Feeling
             <span className="italic text-[#C47A5D]">.</span>
-          </h2>
+          </motion.h2>
         </div>
       </div>
 
       {/* Video Cover Area */}
-      <div className="relative w-full aspect-21/9 min-[1110px]:aspect-[2.5/1] group cursor-pointer overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="relative w-full aspect-21/9 min-[1110px]:aspect-[2.5/1] group cursor-pointer overflow-hidden"
+      >
         <Image
           src="/landing/feature.jpg"
           alt="Cinematic home tour preview"
@@ -65,15 +93,22 @@ export default function FeaturesSection() {
           className="object-cover transition-transform duration-700 group-hover:scale-100"
         />
         {/* ... commented out code ... */}
-      </div>
+      </motion.div>
 
       <div className="w-full relative pb-40">
         <div className="absolute inset-0 z-0 bg-[#F5F2EB]"></div>
         <div className="container p-6 relative z-10 mx-auto">
           {/* Features Grid */}
-          <div className="grid grid-cols-1 min-[1110px]:grid-cols-3 w-full gap-6 text-center">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 min-[1110px]:grid-cols-3 w-full gap-6 text-center"
+          >
             {features.map((feature, index) => (
-              <div
+              <motion.div
+                variants={itemVariants}
                 key={index}
                 className="flex flex-col gap-4 items-center justify-center"
               >
@@ -90,9 +125,9 @@ export default function FeaturesSection() {
                 >
                   {feature.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

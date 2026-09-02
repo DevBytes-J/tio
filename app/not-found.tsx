@@ -28,7 +28,7 @@ export default function NotFound() {
       <p
         className={`${spaceGrotesk.className} text-[#2F2F2F]/60 text-center max-w-md mb-8`}
       >
-        We couldn't find the page you were looking for. It seems like you've
+        We couldn&apos;t find the page you were looking for. It seems like you&apos;ve
         ventured a bit too far.
       </p>
       <Link

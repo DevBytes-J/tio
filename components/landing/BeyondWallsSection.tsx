@@ -2,6 +2,7 @@
 
 import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -20,7 +21,13 @@ export default function BeyondWallsSection() {
       <div className="container mx-auto">
         <div className="flex flex-col min-[1110px]:flex-row gap-6">
           {/* Left Image Area */}
-          <div className="w-full min-[1110px]:w-1/2 relative">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full min-[1110px]:w-1/2 relative"
+          >
             <div className="relative aspect-3/4 w-full">
               <Image
                 src="/landing/content-2.jpg"
@@ -29,10 +36,16 @@ export default function BeyondWallsSection() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Content Area */}
-          <div className="w-full min-[1110px]:w-1/2 flex flex-col justify-between">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="w-full min-[1110px]:w-1/2 flex flex-col justify-between"
+          >
             <div className="max-w-lg mb-12">
               <h2
                 className={`${playfairDisplay.className} text-[40px] italic leading-tight text-[#2F2F2F] mb-6`}
@@ -63,15 +76,15 @@ export default function BeyondWallsSection() {
                   className={`${spaceGrotesk.className} text-xs text-[#2F2F2F]/60 leading-relaxed`}
                 >
                   Beyond aesthetics, we prioritize how a home feels, ensuring
-                  it's a place that supports your daily life, reflects your
-                  personality, and enhances your well-being. Whether it's the
+                  it&apos;s a place that supports your daily life, reflects your
+                  personality, and enhances your well-being. Whether it&apos;s the
                   perfect lighting, an intuitive layout, or a warm, inviting
-                  atmosphere, we help you find a home that isn't just a space -
+                  atmosphere, we help you find a home that isn&apos;t just a space -
                   but a place that truly works for you.
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Playfair_Display, Space_Grotesk } from "next/font/google";
-import Image from "next/image";
+
 import { GoArrowRight } from "react-icons/go";
 
 const playfairDisplay = Playfair_Display({
@@ -25,14 +25,14 @@ export default function ContactHero() {
           <h1
             className={`${playfairDisplay.className} italic text-4xl lg:text-[64px] leading-tight text-[#2F2F2F] mb-6`}
           >
-            Let's Talk - <br /> We're Here to Help
+            Let&apos;s Talk - <br /> We&apos;re Here to Help
             <span className="text-[#C47A5D]">.</span>
           </h1>
           <p
             className={`${spaceGrotesk.className} text-[#2F2F2F]/60 max-w-md text-sm lg:text-base leading-relaxed`}
           >
-            Have questions or inquiries? Whether you're looking for the perfect
-            space or need assistance, we're just a message away.
+            Have questions or inquiries? Whether you&apos;re looking for the perfect
+            space or need assistance, we&apos;re just a message away.
           </p>
         </div>
       </div>
